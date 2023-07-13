@@ -1,0 +1,34 @@
+body{
+    display: flex;
+    height:100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #A7EDE7;
+    color: #6527BE;
+
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #2B2730;
+
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    background-color: #9681EB;
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+.instructions{
+    display: flex;
+    justify-content: center;
+    background-color: #45CFDD;
+    flex-grow: 1;
+    font-size: 20px;
+}
