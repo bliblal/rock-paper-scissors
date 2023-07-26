@@ -89,7 +89,13 @@ function playRound(e){
     computerScore.textContent=`Computer: ${computer}`;
     if (computer>=5 || player>=5){
         winner=winner(computer,player);
-        resultDisplay.textContent=winner;
+        const game=document.querySelector('.game');
+        game.classList.toggle('inactive');
+        const winscreen=document.querySelector('.win');
+        const wintext=document.querySelector('.wintext');
+        wintext.textContent=`${winner}`;
+        winscreen.classList.toggle('inactive');
+
 
     }    
 
