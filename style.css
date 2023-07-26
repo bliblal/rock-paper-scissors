@@ -1,8 +1,13 @@
+@font-face {
+    font-family: retroFont;
+    src: url(retroFont.ttf);
+  }
+
 body{
     display: flex;
-    height:100vh;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+
     background-color: #A7EDE7;
     color: #6527BE;
 
@@ -10,25 +15,85 @@ body{
 
 .content{
     display: flex;
+    flex: 1;
     flex-direction: column;
     border: 5px solid #2B2730;
 
 }
 
 .heading{
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
+    flex:1;
     background-color: #9681EB;
+    text-align: center;
     font-size: 25px;
     font-weight: bold;
 
 }
 
 .instructions{
-    display: flex;
-    justify-content: center;
+    flex:1;
     background-color: #45CFDD;
-    flex-grow: 1;
+    text-align: center;
     font-size: 20px;
 }
+
+.game{
+    flex:3;
+    display: flex;
+}
+
+.scoreboard{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: retroFont, sans-serif;
+    background-color: #2B2730;
+
+    border: 5px solid #6554AF;
+}
+
+
+.playarea{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 5px solid #6554AF;
+}
+
+.buttons{
+    background-color: #2B2730;
+
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.button{
+    border: 5px solid #6554AF;
+    border-radius: 5px;
+    font-size: 40px;
+}
+
+.roundresults{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: retroFont, sans-serif;
+    background-color: #2B2730;
+}
+
+.playerSelection, .computerSelection{
+
+
+}
+
+
+
