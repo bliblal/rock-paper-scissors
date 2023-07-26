@@ -1,3 +1,4 @@
+console.clear();
 let computer=0, player=0;
 
 function getComputerChoice(){
