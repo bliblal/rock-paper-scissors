@@ -1,4 +1,3 @@
-console.clear();
 let computer=0, player=0;
 
 function getComputerChoice(){
@@ -13,40 +12,47 @@ function round(playerSelection,computerSelection){
     computerSelection=computerSelection.toLowerCase();
 
     if (computerSelection===playerSelection){
-        return 'Draw! Choose again';
+        const rountext= 'Draw! Choose again';
+        return rountext;
     }
 
     switch(playerSelection){
         case 'rock':
             if (computerSelection==='paper'){
                 computer++;
-                return 'paper beats rock, you lose!';
+                const rountext= 'paper beats rock, you lose!';
+                return rountext;
             }
             else if (computerSelection==='scissors'){
                 player++;
-                return 'rock beats scissors, you win!';
+                const rountext= 'rock beats scissors, you win!';
+                return rountext;
             }
             break;
 
         case 'paper':
             if (computerSelection==='rock'){
                 player++;
-                return 'paper beats rock, you win!';
+                const rountext=  'paper beats rock, you win!';
+                return rountext;
             }
             else if (computerSelection==='scissors'){
                 computer++;
-                return 'scissors beat paper, you lose!';
+                const rountext=  'scissors beat paper, you lose!';
+                return rountext;
             }
             break;
 
         case 'scissors':
             if (computerSelection==='paper'){
                 player++;
-                return 'scissors beats paper, you win!';
+                const rountext= 'scissors beats paper, you win!';
+                return rountext;
             }
             else if (computerSelection==='rock'){
                 computer++;
-                return 'rock beats scissors, you lose!';
+                const rountext= 'rock beats scissors, you lose!';
+                return rountext;
             }
 
             break;
@@ -55,31 +61,41 @@ function round(playerSelection,computerSelection){
 
 function winner(computer, player){
     if(computer>=player){
-        return 'computer wins';
+        return 'Computer Wins!';
     }
-
     else if (computer<=player){
-        return 'player wins';
-    }
-
-    else return 'draw!!';
-}
-
-function game(){
-    for(count =1; count<=5; count++){
-        console.log('--------------------------------');
-        console.log(`turn:${count}`);
-        playerSelection=prompt('enter your choice');
-        computerSelection=getComputerChoice();
-        console.log(`you picked: ${playerSelection}`);
-        console.log(`computer picked: ${computerSelection}`);
-        console.log(round(playerSelection,computerSelection));
+        return 'Player Wins!';
     }
 
     
+}
 
-    console.log(`final score:\n computer:${computer} player:${player}\n winner:${winner(computer, player)}`)
+
+function playRound(e){
+    const playerSelection=e.target.classList[1];
+    computerSelection=getComputerChoice();
+    round_text=round(playerSelection,computerSelection);
+    const roundscore=document.querySelector('.roundresults');
+    const playerSelecDisplay=document.querySelector('.playerSelection');
+    const computerSelecDisplay= document.querySelector('.computerSelection');
+    playerSelecDisplay.textContent=`Player Choice: ${playerSelection}`;
+    computerSelecDisplay.textContent=`Computer Choice: ${computerSelection}`;
+    resultDisplay=document.querySelector('.resultsDisplay');
+    resultDisplay.textContent=round_text;
+
+    const playerScore=document.querySelector('.Player');
+    playerScore.textContent=`Player: ${player}`;
+    const computerScore=document.querySelector('.Computer');
+    computerScore.textContent=`Computer: ${computer}`;
+    if (computer>=5 || player>=5){
+        winner=winner(computer,player);
+        resultDisplay.textContent=winner;
+
+    }    
+
 
 }
 
-game();
+
+const buttons= document.querySelectorAll('.button');
+buttons.forEach(button => button.addEventListener('click', playRound) );
