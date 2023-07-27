@@ -20,12 +20,12 @@ function round(playerSelection,computerSelection){
         case 'rock':
             if (computerSelection==='paper'){
                 computer++;
-                const rountext= 'paper beats rock, you lose!';
+                const rountext= 'Paper beats Rock, you Lose!';
                 return rountext;
             }
             else if (computerSelection==='scissors'){
                 player++;
-                const rountext= 'rock beats scissors, you win!';
+                const rountext= 'Rock beats Scissors, you Win!';
                 return rountext;
             }
             break;
@@ -33,12 +33,12 @@ function round(playerSelection,computerSelection){
         case 'paper':
             if (computerSelection==='rock'){
                 player++;
-                const rountext=  'paper beats rock, you win!';
+                const rountext=  'Paper beats Rock, you Win!';
                 return rountext;
             }
             else if (computerSelection==='scissors'){
                 computer++;
-                const rountext=  'scissors beat paper, you lose!';
+                const rountext=  'Scissors beat Paper, you Lose!';
                 return rountext;
             }
             break;
@@ -46,12 +46,12 @@ function round(playerSelection,computerSelection){
         case 'scissors':
             if (computerSelection==='paper'){
                 player++;
-                const rountext= 'scissors beats paper, you win!';
+                const rountext= 'Scissors beats Paper, you Win!';
                 return rountext;
             }
             else if (computerSelection==='rock'){
                 computer++;
-                const rountext= 'rock beats scissors, you lose!';
+                const rountext= 'Rock beats Scissors, you Lose!';
                 return rountext;
             }
 
